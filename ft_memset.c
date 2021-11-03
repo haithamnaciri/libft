@@ -6,18 +6,18 @@
 /*   By: hnaciri- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 13:23:57 by hnaciri-          #+#    #+#             */
-/*   Updated: 2021/11/01 19:12:27 by hnaciri-         ###   ########.fr       */
+/*   Updated: 2021/11/03 13:16:25 by hnaciri-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
 	char	*str;
 
 	str = (char *)b;
-	while (*str && len)
+	while (len)
 	{
 		*str = c;
 		str++;

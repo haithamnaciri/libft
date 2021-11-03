@@ -6,9 +6,11 @@
 /*   By: hnaciri- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 18:03:42 by hnaciri-          #+#    #+#             */
-/*   Updated: 2021/11/02 15:41:23 by hnaciri-         ###   ########.fr       */
+/*   Updated: 2021/11/03 10:42:59 by hnaciri-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	strlcpy(char *restrict dest, const char *restrict src, size_t size)
 {

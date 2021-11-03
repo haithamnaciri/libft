@@ -6,11 +6,11 @@
 /*   By: hnaciri- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 09:56:59 by hnaciri-          #+#    #+#             */
-/*   Updated: 2021/11/02 18:53:41 by hnaciri-         ###   ########.fr       */
+/*   Updated: 2021/11/03 11:08:11 by hnaciri-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(char *src)
 {

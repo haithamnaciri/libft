@@ -6,9 +6,11 @@
 /*   By: hnaciri- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:53:11 by hnaciri-          #+#    #+#             */
-/*   Updated: 2021/11/02 15:43:13 by hnaciri-         ###   ########.fr       */
+/*   Updated: 2021/11/03 12:09:26 by hnaciri-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
