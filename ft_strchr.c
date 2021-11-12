@@ -6,7 +6,7 @@
 /*   By: hnaciri- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 19:53:24 by hnaciri-          #+#    #+#             */
-/*   Updated: 2021/11/03 12:21:15 by hnaciri-         ###   ########.fr       */
+/*   Updated: 2021/11/09 14:45:07 by hnaciri-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ char	*ft_strchr(const char *s, int c)
 	str = (char *) s;
 	while (*str)
 	{
-		if (c == *str)
+		if ((char)c == *str)
 			return (str);
 		str++;
 	}
+	if (*str == (char)c)
+		return (str);
 	return (0);
 }

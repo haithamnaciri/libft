@@ -6,13 +6,13 @@
 /*   By: hnaciri- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 13:07:03 by hnaciri-          #+#    #+#             */
-/*   Updated: 2021/11/03 20:38:49 by hnaciri-         ###   ########.fr       */
+/*   Updated: 2021/11/10 15:21:09 by hnaciri-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_alloc(char const *str, char c)
+static int	ft_alloc(char const *str, char c)
 {
 	int	counter;
 	int	i;
@@ -29,7 +29,7 @@ int	ft_alloc(char const *str, char c)
 	return (counter);
 }
 
-int	ft_position(char const *s, int *position, char c)
+static int	ft_position(char const *s, int *position, char c)
 {
 	int	counter;
 
@@ -45,7 +45,7 @@ int	ft_position(char const *s, int *position, char c)
 	return (counter);
 }
 
-void	ft_address(char *dest, char const *src, char c, int i)
+static void	ft_address(char *dest, char const *src, char c, int i)
 {
 	int	j;
 
@@ -61,25 +61,50 @@ void	ft_address(char *dest, char const *src, char c, int i)
 	dest[j] = '\0';
 }
 
-char	**ft_split(char const *s, char c)
+static char	**ft_fill(char const *s, char c, int *position, char **table)
 {
-	int		i;
-	int		*position;
-	int		p;
-	char	**table;
+	int	i;
+	int	p;
 
 	i = 0;
-	p = 0;
-	position = malloc (sizeof(int));
-	*position = 0;
-	table = malloc (sizeof(char *) * ft_alloc(s, c));
 	while (i < (ft_alloc(s, c) - 1))
 	{
 		p = *position;
 		table[i] = malloc (sizeof(char) * ft_position(s, position, c));
+		if (table[i] == 0)
+		{
+			while (i--)
+				free(table[i]);
+			free (position);
+			return (0);
+		}
 		ft_address(table[i], s, c, p);
 		i++;
 	}
 	table[ft_alloc(s, c) - 1] = 0;
+	free (position);
+	return (table);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		*position;
+	char	**table;
+
+	if (!s)
+		return (0);
+	position = malloc (1 * sizeof(int));
+	if (!position)
+		return (0);
+	*position = 0;
+	table = malloc (sizeof(char *) * ft_alloc(s, c));
+	if (!table)
+		return (0);
+	table = ft_fill(s, c, position, table);
+	if (!table)
+	{
+		free(table);
+		return (0);
+	}
 	return (table);
 }

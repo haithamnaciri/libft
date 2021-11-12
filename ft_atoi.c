@@ -6,7 +6,7 @@
 /*   By: hnaciri- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:36:00 by hnaciri-          #+#    #+#             */
-/*   Updated: 2021/11/03 11:05:42 by hnaciri-         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:46:49 by hnaciri-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
-	int	total;
+	int					i;
+	int					sign;
+	unsigned long long	total;
 
 	total = 0;
 	sign = 1;
